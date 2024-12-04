@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/primerFragment">
+
+    <fragment
+        android:id="@+id/primerFragment"
+        android:name="com.example.ejemplonavegacion.PrimerFragment"
+        android:label="fragment_primer"
+        tools:layout="@layout/fragment_primer">
+        <action
+            android:id="@+id/action_primerFragment_to_tercerFragmento"
+            app:destination="@id/tercerFragmento" />
+        <action
+            android:id="@+id/action_primerFragment_to_segundoFragmento"
+            app:destination="@id/segundoFragmento" />
+    </fragment>
+    <fragment
+        android:id="@+id/segundoFragmento"
+        android:name="com.example.ejemplonavegacion.SegundoFragmento"
+        android:label="fragment_segundo_fragmento"
+        tools:layout="@layout/fragment_segundo_fragmento">
+        <action
+            android:id="@+id/action_segundoFragmento_to_cuartoFragmento"
+            app:destination="@id/cuartoFragmento"
+            app:popUpTo="@id/primerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/tercerFragmento"
+        android:name="com.example.ejemplonavegacion.TercerFragmento"
+        android:label="fragment_tercer_fragmento"
+        tools:layout="@layout/fragment_tercer_fragmento" />
+    <fragment
+        android:id="@+id/cuartoFragmento"
+        android:name="com.example.ejemplonavegacion.CuartoFragmento"
+        android:label="fragment_cuarto_fragmento"
+        tools:layout="@layout/fragment_cuarto_fragmento" />
+</navigation>
